@@ -22,6 +22,7 @@ class Computer(db.Model):
     lisc_status = db.Column(db.String(32))
     serial_number = db.Column(db.String(32))
     asset_tag = db.Column(db.String(32))
+    completed = db.Column(db.Boolean)
     skew_id = db.Column(db.Integer, db.ForeignKey('skew.id'))
     status_recieved = relationship("Status", backref="author", foreign_keys='Status.computer_id')#db.relationship("Status", backref='author', lazy='dynamic')
 
